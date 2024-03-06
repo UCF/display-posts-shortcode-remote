@@ -473,7 +473,7 @@ if ( ! class_exists( 'Display_Posts_Remote' ) ) {
 			}
 
 			if ( ! in_array( 'display-posts-listing', $atts['wrapper_class'] )) {
-				$atts['wrapper_class'][] = 'display-posts-listing';
+				$atts['wrapper_class'][] = 'display-posts-listing row';
 			}
 			 $wrapper_class = implode( ' ', $atts['wrapper_class'] ) ;
 			
@@ -490,11 +490,11 @@ if ( ! class_exists( 'Display_Posts_Remote' ) ) {
 
 				if ( $atts['include_title'] && $atts['include_link'] ) {
 
-					$title = '<span class="title"><a href="' . esc_url( $post->get_permalink() ) . '">' . esc_attr( strip_tags( $post->get_the_title() ) ) . '</a></span>';
+					$title = '<span class="title h4"><a class="text-decoration-none stretched-link" href="' . esc_url( $post->get_permalink() ) . '">' . esc_attr( strip_tags( $post->get_the_title() ) ) . '</a></span>';
 
 				} elseif ( $atts['include_title'] ) {
 
-					$title = '<span class="title">' . esc_attr( strip_tags( $post->get_the_title() ) ) . '</span>';
+					$title = '<span class="title h4">' . esc_attr( strip_tags( $post->get_the_title() ) ) . '</span>';
 
 				} else {
 
@@ -575,7 +575,7 @@ if ( ! class_exists( 'Display_Posts_Remote' ) ) {
 				 */
 				$html .= apply_filters(
 					'display_posts_shortcode_output',
-					"<{$itemElement} class=\"listing-item\">{$image}{$title}{$date}{$postContent}{$excerpt}</{$itemElement}>" . PHP_EOL,
+					"<{$itemElement} class=\"listing-item col-lg-6\"><div class=\"h-100 p-4 m-1 bg-faded shadow-sm\">{$image}{$title}{$date}{$postContent}{$excerpt}</div></{$itemElement}>" . PHP_EOL,
 					array(), // $original_atts
 					$image,
 					$title,

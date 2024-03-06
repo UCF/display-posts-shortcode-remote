@@ -472,9 +472,11 @@ if ( ! class_exists( 'Display_Posts_Remote' ) ) {
 				$atts['wrapper'] = 'ul';
 			}
 
-			if ( $atts['wrapper_class'] ) {
-				$wrapper_class = implode( ' ', $atts['wrapper_class'] ) ;
+			if ( ! in_array( 'display-posts-listing', $atts['wrapper_class'] )) {
+				$atts['wrapper_class'][] = 'display-posts-listing';
 			}
+			 $wrapper_class = implode( ' ', $atts['wrapper_class'] ) ;
+			
 		
 			$itemElement = 'div' === $atts['wrapper'] ? 'div' : 'li';
 
@@ -536,6 +538,7 @@ if ( ! class_exists( 'Display_Posts_Remote' ) ) {
 				if ( $atts['include_excerpt'] ) {
 					
 					$excerpt = isset($data->excerpt->rendered) ? wpautop($data->excerpt->rendered) : '';
+					$excerpt = wp_trim_words(strip_shortcodes($excerpt), $atts['excerpt_length']);
 					if ($atts['include_excerpt_dash']) {
 						$excerpt = '<span class="excerpt-dash">-</span>' . $excerpt;
 					}
@@ -603,7 +606,7 @@ if ( ! class_exists( 'Display_Posts_Remote' ) ) {
 				$html = $heading . $html;
 			}
 
-			$open  = "<{$atts['wrapper']} class='display-posts-listing $wrapper_class'>" . PHP_EOL;
+			$open  = "<{$atts['wrapper']} class='$wrapper_class'>" . PHP_EOL;
 			$close = "</{$atts['wrapper']}>" . PHP_EOL;
 
 			return $open . $html . $close;

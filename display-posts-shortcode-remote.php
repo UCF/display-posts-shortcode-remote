@@ -352,6 +352,7 @@ if ( ! class_exists( 'Display_Posts_Remote' ) ) {
 				'title'                 => '',
 				'url'                   => '',
 				'wrapper'               => 'ul',
+				'wrapper_class'         => 'display-posts-listing',
 				'cache_timeout'         => DAY_IN_SECONDS,
 			);
 		}
@@ -409,6 +410,8 @@ if ( ! class_exists( 'Display_Posts_Remote' ) ) {
 			$atts['title']                 = sanitize_text_field( $atts['title'] );
 			$atts['url']                   = filter_var( $atts['url'], FILTER_SANITIZE_URL );
 			$atts['wrapper']               = sanitize_text_field( $atts['wrapper'] );
+			$atts['wrapper_class']         = array_map( 'sanitize_html_class', explode( ' ', $atts['wrapper_class'] ) );
+
 			$atts['cache_timeout']         = absint( $atts['cache_timeout'] );
 			
 
@@ -469,6 +472,12 @@ if ( ! class_exists( 'Display_Posts_Remote' ) ) {
 				$atts['wrapper'] = 'ul';
 			}
 
+			if ( ! in_array( 'display-posts-listing', $atts['wrapper_class'] )) {
+				$atts['wrapper_class'][] = 'display-posts-listing';
+			}
+			 $wrapper_class = implode( ' ', $atts['wrapper_class'] ) ;
+			
+		
 			$itemElement = 'div' === $atts['wrapper'] ? 'div' : 'li';
 
 			foreach ( $result as $data ) {
@@ -529,6 +538,7 @@ if ( ! class_exists( 'Display_Posts_Remote' ) ) {
 				if ( $atts['include_excerpt'] ) {
 					
 					$excerpt = isset($data->excerpt->rendered) ? wpautop($data->excerpt->rendered) : '';
+					$excerpt = wp_trim_words(strip_shortcodes($excerpt), $atts['excerpt_length']);
 					if ($atts['include_excerpt_dash']) {
 						$excerpt = '<span class="excerpt-dash">-</span>' . $excerpt;
 					}
@@ -596,7 +606,7 @@ if ( ! class_exists( 'Display_Posts_Remote' ) ) {
 				$html = $heading . $html;
 			}
 
-			$open  = "<{$atts['wrapper']} class=\"display-posts-listing\">" . PHP_EOL;
+			$open  = "<{$atts['wrapper']} class='$wrapper_class'>" . PHP_EOL;
 			$close = "</{$atts['wrapper']}>" . PHP_EOL;
 
 			return $open . $html . $close;

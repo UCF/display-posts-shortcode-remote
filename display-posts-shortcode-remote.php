@@ -505,19 +505,19 @@ if ( ! class_exists( 'Display_Posts_Remote' ) ) {
 
 				if ( $atts['image_size'] && $post->has_post_thumbnail() && $atts['include_link'] ) {
 
-					$image = '<a class="image" href="' . esc_url( $post->get_permalink() ) . '">' . $post->get_the_post_thumbnail( $atts['image_size'], $imageAttributes ) . '</a> ';
+					$image = '<a class="image pb-4" href="' . esc_url( $post->get_permalink() ) . '">' . $post->get_the_post_thumbnail( $atts['image_size'], $imageAttributes ) . '</a> ';
 
 				} elseif ( $atts['image_size'] && $post->has_post_thumbnail() ) {
 
-					$image = '<span class="image">' . $post->get_the_post_thumbnail( $atts['image_size'], $imageAttributes ) . '</span> ';
+					$image = '<span class="image pb-4">' . $post->get_the_post_thumbnail( $atts['image_size'], $imageAttributes ) . '</span> ';
 
 				} elseif ( $post->has_featured_media() && $atts['include_link'] ) {
 
-					$image = '<a class="image" href="' . esc_url( $post->get_permalink() ) . '">' . $post->get_the_post_thumbnail( 'full', $imageAttributes ) . '</a> ';
+					$image = '<a class="image pb-4" href="' . esc_url( $post->get_permalink() ) . '">' . $post->get_the_post_thumbnail( 'full', $imageAttributes ) . '</a> ';
 
 				} elseif ( $post->has_featured_media() ) {
 
-					$image = '<span class="image">' . $post->get_the_post_thumbnail( 'full', $imageAttributes ) . '</span> ';
+					$image = '<span class="image pb-4">' . $post->get_the_post_thumbnail( 'full', $imageAttributes ) . '</span> ';
 
 				}
 

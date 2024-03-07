@@ -575,7 +575,7 @@ if ( ! class_exists( 'Display_Posts_Remote' ) ) {
 				 */
 				$html .= apply_filters(
 					'display_posts_shortcode_output',
-					"<{$itemElement} class=\"listing-item col-lg-6 mb-3 px-1\"><div class=\"h-100 p-3 mr-1\">{$image}{$title}{$date}{$postContent}{$excerpt}</div></{$itemElement}>" . PHP_EOL,
+					"<{$itemElement} class=\"col-lg-6 mb-2 px-1\"><div class=\"listing-item h-100 p-3 mx-1\">{$image}{$title}{$date}{$postContent}{$excerpt}</div></{$itemElement}>" . PHP_EOL,
 					array(), // $original_atts
 					$image,
 					$title,

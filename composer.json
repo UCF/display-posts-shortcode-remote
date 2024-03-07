@@ -1,0 +1,8 @@
+{
+    "name": "display-posts-shortcode-remote",
+    "description": "The plugin helps to pull remote WordPress posts and display them within the shortcode. It was forked from the GitHub repository shazahm1/Display-Posts-Shortcode-Remote and modified.",
+    "type": "wordpress-plugin",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

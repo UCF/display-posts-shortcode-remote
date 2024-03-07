@@ -1,0 +1,17 @@
+.display-posts-listing.image-left .listing-item {
+	overflow: hidden;
+	width: 100%;
+}
+
+.display-posts-listing.image-left .image {
+	float: left;
+	margin: 0 16px 0 0;
+}
+
+.display-posts-listing.image-left .title {
+	display: block;
+}
+
+.display-posts-listing.image-left .excerpt-dash {
+	display: none;
+}

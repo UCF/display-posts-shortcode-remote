@@ -505,19 +505,19 @@ if ( ! class_exists( 'Display_Posts_Remote' ) ) {
 
 				if ( $atts['image_size'] && $post->has_post_thumbnail() && $atts['include_link'] ) {
 
-					$image = '<a class="image" href="' . esc_url( $post->get_permalink() ) . '">' . $post->get_the_post_thumbnail( $atts['image_size'], $imageAttributes ) . '</a> ';
+					$image = '<a class="image pb-4" href="' . esc_url( $post->get_permalink() ) . '">' . $post->get_the_post_thumbnail( $atts['image_size'], $imageAttributes ) . '</a> ';
 
 				} elseif ( $atts['image_size'] && $post->has_post_thumbnail() ) {
 
-					$image = '<span class="image">' . $post->get_the_post_thumbnail( $atts['image_size'], $imageAttributes ) . '</span> ';
+					$image = '<span class="image pb-4">' . $post->get_the_post_thumbnail( $atts['image_size'], $imageAttributes ) . '</span> ';
 
 				} elseif ( $post->has_featured_media() && $atts['include_link'] ) {
 
-					$image = '<a class="image" href="' . esc_url( $post->get_permalink() ) . '">' . $post->get_the_post_thumbnail( 'full', $imageAttributes ) . '</a> ';
+					$image = '<a class="image pb-4" href="' . esc_url( $post->get_permalink() ) . '">' . $post->get_the_post_thumbnail( 'full', $imageAttributes ) . '</a> ';
 
 				} elseif ( $post->has_featured_media() ) {
 
-					$image = '<span class="image">' . $post->get_the_post_thumbnail( 'full', $imageAttributes ) . '</span> ';
+					$image = '<span class="image pb-4">' . $post->get_the_post_thumbnail( 'full', $imageAttributes ) . '</span> ';
 
 				}
 
@@ -575,7 +575,7 @@ if ( ! class_exists( 'Display_Posts_Remote' ) ) {
 				 */
 				$html .= apply_filters(
 					'display_posts_shortcode_output',
-					"<{$itemElement} class=\"listing-item col-lg-6\"><div class=\"h-100 p-4 m-1 bg-faded shadow-sm\">{$image}{$title}{$date}{$postContent}{$excerpt}</div></{$itemElement}>" . PHP_EOL,
+					"<{$itemElement} class=\"col-lg-6 mb-2 px-1\"><div class=\"listing-item h-100 p-3 mx-1\">{$image}{$title}{$date}{$postContent}{$excerpt}</div></{$itemElement}>" . PHP_EOL,
 					array(), // $original_atts
 					$image,
 					$title,

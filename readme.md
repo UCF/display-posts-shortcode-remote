@@ -32,7 +32,7 @@ Note that you can only pull remote posts from WordPress REST APIs.
 
 
 ### Instructions ###
-* You can download the plugin from [here](https://github.com/UCF/display-posts-shortcode-remote/archive/refs/heads/master.zip) and install it in your Wordpress directly or Clone the ucf-vertical-slide-plugin [repo](hhttps://github.com/UCF/display-posts-shortcode-remote) into your local development environment, within your WordPress installation's plugins/ directory: git clone https://github.com/UCF/display-posts-shortcode-remote .
+* You can download the plugin from [here](https://github.com/UCF/display-posts-shortcode-remote/archive/refs/heads/master.zip) and install it in your Wordpress directly or Clone the display-posts-shortcode-remote [repo](hhttps://github.com/UCF/display-posts-shortcode-remote) into your local development environment, within your WordPress installation's plugins/ directory: git clone https://github.com/UCF/display-posts-shortcode-remote .
 
 
 ## Contributing ##

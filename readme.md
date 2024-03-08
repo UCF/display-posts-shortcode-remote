@@ -13,9 +13,6 @@ Head over to the [display-posts-shortcode-remote](https://github.com/UCF/display
 
 ## Changelog ##
 
-### 0.2.0 ###
-* Added github packagist update action.
-
 ### 0.1.0 ###
 * Initial release
 

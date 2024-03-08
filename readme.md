@@ -4,7 +4,7 @@ A plugin to display a list of posts from remote wp rest api.
 
 ## Description ##
 
-The plugin was forked from [Display-Posts-Shortcode-Remote](https://github.com/shazahm1/Display-Posts-Shortcode-Remote) modified and customized by Webcom team in order to add some functionality and styles which were not existed in the original plugin. 
+The plugin was forked from [Display-Posts-Shortcode-Remote](https://github.com/shazahm1/Display-Posts-Shortcode-Remote) modified, and customized by the Webcom team to add functionality and styles that did not exist in the original plugin.
 
 ## Documentation ##
 
@@ -27,7 +27,7 @@ n/a
 
 ## Development ##
 
-Note that you can pull the remote posts from wordpress rest apis only. 
+Note that you can only pull remote posts from WordPress REST APIs.
 
 ### Requirements ###
 * WordPress installation
